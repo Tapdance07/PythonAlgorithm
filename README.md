@@ -9,8 +9,7 @@
 - **Tools**: VS Code,Pycharm 
 
 ## 📈 Solved.ac Stats
-
-[![Solved.ac Profile](https://mazassumnida.vercel.app/api/v2/generate_badge?boj=tapdance)](https://solved.ac/profile/tapdance)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=tapdance)](https://solved.ac/tapdance/)
 
 ## 🔗 Useful Links
 - [백준 온라인 저지 (BOJ)](https://www.acmicpc.net/)
