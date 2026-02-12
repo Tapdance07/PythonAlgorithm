@@ -11,6 +11,7 @@ for i in range(N):
     target.append((A[i], i))
 
 # 값을 기준으로 오름차순 정렬
+# 값A[i]먼저 정렬되고 뒤에 i가 오기 때문에 값이 같을 때는 인덱스가 작은 것이 먼저 오게 됨
 target.sort()
 
 # 결과 수열 P 생성
