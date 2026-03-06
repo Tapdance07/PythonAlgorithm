@@ -90,4 +90,3 @@ for _ in range(T):
                 bfs(x,y,filed,visited,M,N)
                 count += 1
     print(count)   
-    print(count)
