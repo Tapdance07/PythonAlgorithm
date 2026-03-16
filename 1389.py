@@ -22,27 +22,23 @@ for _ in range(M):
     node[freind].append(user)
 # 여기까지가 일단적인 로직이다.
 
-
-def bfs(start):
-    # 각 유저까지의 단계를 기록 (미방문은 -1)
-    distances = [-1] * (N + 1)
-    # 한명에 대한 것
+def BFS(start):
+    rel = [-1] * (N +1)
+    # 해당 지점의 사람까지 얼마나 걸리나
+    rel[start] = 0
+    # 자기 자신과의 거리는 0이 되는거지
     queue = deque([start])
 
-    distances[start] = 0  # 자기 자신까지의 거리는 0
-    
     while queue:
         curr = queue.popleft()
-        
-        for neighbor in node[curr]:
-            if distances[neighbor] == -1:  # 아직 방문하지 않은 친구라면
-                distances[neighbor] = distances[curr] + 1
-                queue.append(neighbor)
-                
-    return sum(distances[1:])
 
-results = []
-for i in range(1, N + 1):
-    results.append(bfs(i))
+        for i in node[curr]:
+            if rel[i] == -1:
+                queue.append(i)
+                rel[i] = rel[curr] + 1
+    return sum(rel)
 
-print(results.index(min(results)) + 1)
+distance = []
+for i in range(1,N+1):
+    distance.append(BFS(i))
+print(distance.index(min(distance))+1)
