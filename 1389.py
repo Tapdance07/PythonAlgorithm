@@ -23,10 +23,10 @@ for _ in range(M):
 # 여기까지가 일단적인 로직이다.
 
 
-
 def bfs(start):
     # 각 유저까지의 단계를 기록 (미방문은 -1)
     distances = [-1] * (N + 1)
+    # 한명에 대한 것
     queue = deque([start])
 
     distances[start] = 0  # 자기 자신까지의 거리는 0
