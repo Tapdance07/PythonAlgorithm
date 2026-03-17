@@ -16,6 +16,7 @@ visited = [-1] * MAX
 
 def BFS(start):
     queue = deque([start])
+    visited[start] = 0
     # 일단 큐에 시작지점을 넣자.
 
     while queue:
