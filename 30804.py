@@ -11,6 +11,33 @@ N = int(sys.stdin.readline().rstrip())
 fruits = list(map(int,sys.stdin.readline().rstrip().split()))
 # 과일을 입력 받아
 # 두 포인트와 브루트 포스를 둘 다 적용을 해야한다.
+# 이렇게 되면 결국엔 set을 해서 크기가 2일때까지 반복하는 것을 만드는 것이 
+# 최선의 알고리즘이지 않을까?
+# 무언가의 행동을 하기 전에 set(fruits)를 통해서 2보다 작은지를 학인한다.
+count_list = [0] * 10
+left = 0
+max_fruits = 0
+kind = 0 
 
-# 앞하고 뒤를 비교해서 더 작은 값의 과일을 빼는것 같다.
-# 한번 비교를 할때마다 N에서 숫자를 하나씩 빼면 2개일때의 값을 보면 될것이다.
+for right in range(N):
+    target_fruit = fruits[right]
+    
+    if count_list[target_fruit] == 0:
+        kind += 1
+        
+    count_list[target_fruit] += 1
+    
+    while kind > 2:
+        left_fruit = fruits[left]
+        count_list[left_fruit] -= 1
+        
+        if count_list[left_fruit] == 0:
+            kind -= 1
+        
+        left += 1
+    
+    current_len = right - left + 1
+    if current_len > max_fruits:
+        max_fruits = current_len
+
+print(max_fruits)
