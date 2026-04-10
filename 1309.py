@@ -16,4 +16,4 @@ for i in range(2, N+1):
     # 이렇게 하면 가능한 모든 상태가 기록되고
     # i번째에 있는걸 다 sum해서 보여주면 된다?
     
-print(sum(dp[i]))
+print(sum(dp[i]) % 9901)
